@@ -254,6 +254,20 @@ export default {
         console.log(err);
       })
     }
+  },
+  beforeRouteEnter(to,from,next){
+    console.log("路由进入details...");
+    // if(from.name=="product"){
+    //   from.meta.keepAlive=true;
+    //   }
+    next();
+  },
+  beforeRouteLeave(to,from,next){
+    console.log("路由离开details...");
+    if(to.name=="product"){
+      to.meta.keepAlive=true;
+    }
+    next();
   }
 }
 </script>
